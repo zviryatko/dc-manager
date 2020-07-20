@@ -24,12 +24,12 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'dev'
-    - run: export PUB_CACHE="$PWD/.pub-cache"
     - run: flutter config --enable-linux-desktop
     - run: flutter channel dev
     - run: flutter upgrade
     - run: flutter devices
     - run: flutter doctor
+    - run: flutter clean
     - run: flutter pub get
     - run: flutter pub cache repair
     # - run: flutter test
