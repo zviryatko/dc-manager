@@ -30,6 +30,7 @@ jobs:
     - run: flutter devices
     - run: flutter doctor
     - run: flutter pub get
+    - run: flutter pub cache repair
     # - run: flutter test
     - run: flutter build --verbose linux
     - name: Upload a Build Artifact
