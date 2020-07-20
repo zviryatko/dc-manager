@@ -23,6 +23,10 @@ jobs:
         flutter-version: '1.12.x' # you can use 1.12
         channel: 'dev'
     - run: flutter config --enable-linux-desktop
+    - run: flutter channel dev
+    - run: flutter upgrade
+    - run: flutter devices
+    - run: flutter doctor
     - run: flutter pub get
     # - run: flutter test
     - run: flutter build linux
