@@ -31,7 +31,7 @@ jobs:
     - run: flutter doctor
     - run: flutter pub get
     # - run: flutter test
-    - run: flutter build linux
+    - run: flutter build --verbose linux
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
