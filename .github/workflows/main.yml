@@ -20,7 +20,6 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '1.12.x' # you can use 1.12
         channel: 'dev'
     - run: flutter config --enable-linux-desktop
     - run: flutter channel dev
