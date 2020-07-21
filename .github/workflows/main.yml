@@ -24,8 +24,9 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'dev'
+    - env:
+        FLUTTER_ROOT: ${{ FLUTTER_HOME }}
     - run: |
-        sudo rm -rf /b/s/w/ir/k/archive/flutter/.pub-cache/
         flutter config --enable-linux-desktop
         flutter channel dev
         flutter upgrade
