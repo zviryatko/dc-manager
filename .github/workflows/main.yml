@@ -24,16 +24,18 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'dev'
-    - env:
-        FLUTTER_ROOT: ${{ FLUTTER_HOME }}
     - run: |
         flutter config --enable-linux-desktop
         flutter channel dev
         flutter upgrade
         flutter devices
         flutter doctor
+      env:
+        FLUTTER_ROOT: ${{ FLUTTER_HOME }}
     # - run: flutter test
     - run: flutter build linux --pub --verbose
+      env:
+        FLUTTER_ROOT: ${{ FLUTTER_HOME }}
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
