@@ -30,8 +30,9 @@ jobs:
         flutter channel dev
         flutter upgrade
         flutter devices
+        flutter doctor
     # - run: flutter test
-    - run: flutter build --pub --verbose linux
+    - run: flutter build linux --pub --verbose
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
