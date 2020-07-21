@@ -10,9 +10,6 @@ on:
   pull_request:
     branches: [ master ]
 
-env:
-  PUB_CACHE: "$HOME/.pub-cache"
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,17 +23,15 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        channel: 'dev'
-    - run: flutter config --enable-linux-desktop
-    - run: flutter channel dev
-    - run: flutter upgrade
-    - run: flutter devices
-    - run: flutter doctor
-    - run: flutter clean
-    - run: flutter pub get
-    - run: flutter pub cache repair
+        channel: 'master'
+    - run: |
+        sudo rm -rf /b/s/w/ir/k/archive/flutter/.pub-cache/
+        flutter config --enable-linux-desktop
+        flutter channel dev
+        flutter upgrade
+        flutter devices
     # - run: flutter test
-    - run: flutter build --verbose linux
+    - run: flutter build --pub --verbose linux
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
