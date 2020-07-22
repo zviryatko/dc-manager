@@ -1,0 +1,16 @@
+name: dc-manager
+version: '1.0.0+1'
+summary: Docker Compose Manager
+description: Docker Compose Manage - manage your docker-compose project easily!
+confinement: strict
+base: core18
+parts:
+  dc-manager:
+    plugin: flutter
+    source: .
+
+apps:
+  dc-manager:
+    command: dc_manager
+    extensions: [flutter-dev]
+
