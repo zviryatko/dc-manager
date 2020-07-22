@@ -26,6 +26,7 @@ jobs:
         channel: 'dev'
     - run: |
         flutter config --enable-linux-desktop
+        flutter update-packages
         flutter devices
         flutter doctor
       env:
