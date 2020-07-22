@@ -40,3 +40,7 @@ jobs:
       with:
         name: build
         path: build/linux/release/bundle
+    - name: Snapcraft Action
+      uses: samuelmeuli/action-snapcraft@v1.1.2
+      with:
+        snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
