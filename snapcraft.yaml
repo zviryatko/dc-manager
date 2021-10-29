@@ -4,6 +4,21 @@ summary: Docker Compose Manager
 description: Docker Compose Manage - manage your docker-compose project easily!
 confinement: strict
 base: core18
+
+plugs:
+  support:
+    interface: docker-support
+  privileged:
+    interface: docker-support
+    privileged-containers: true
+  docker-cli:
+    interface: docker
+  docker-executables:
+    content: docker-executables
+    default-provider: docker
+    interface: content
+    target: docker-env
+
 parts:
   dc-manager:
     plugin: flutter
@@ -13,4 +28,5 @@ apps:
   dc-manager:
     command: dc_manager
     extensions: [flutter-dev]
+    plugs: [network, docker-executables, docker-cli]
 
